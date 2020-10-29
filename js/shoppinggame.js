@@ -8,18 +8,18 @@ const player = {
     name,
     score,
     items,
-    getCurrentScore() {
-        return score;
+    getCurrentScore: function() {
+        return this.score;
     },
-    addPoints(points) {
-        score+=points;
+    addPoints: function(points) {
+        this.score+=points;
     },
-    deductPoints(points) {
-        score-=points;
+    deductPoints: function(points) {
+        this.score-=points;
     }
 }
 // Define the Product class - write the Constructor function for Product class here
-const Product = (id, name, price, expiryDate) => {
+function Product(id, name, price, expiryDate) {
     this.id = id;
     this.name = name;
     this.price = price;
@@ -42,7 +42,7 @@ Product.prototype.getDetails = function() {
     return `Product Name: ${this.name} , Product Price: ${this.price}`;
 };
 // Define the MagicProduct class here
-const MagicProduct = (id, name, price, expiryDate, points, isBonus) => {
+function MagicProduct (id, name, price, expiryDate, points, isBonus) {
     Product.call(this, id, name, price, expiryDate);
     this.points = points;
     this.isBonus = isBonus;
